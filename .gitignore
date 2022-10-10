@@ -1,0 +1,20 @@
+# ignore ALL .log files
+*.log
+
+# ignore ALL files in ANY directory named temp
+temp/
+Wapi-The-UnitTest/bin
+Wapi-The-UnitTest/obj
+Wapi-The-UnitTest/TestResults
+
+Wapi-the-Services/bin
+Wapi-the-Services/obj
+
+Wapi-the-Infra/bin
+Wapi-the-Infra/obj
+
+Wapi-the-Core/bin/
+Wapi-the-Core/obj
+
+WAPI-The/bin/
+WAPI-The/obj/
