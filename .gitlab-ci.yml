@@ -1,0 +1,40 @@
+image: mcr.microsoft.com/dotnet/sdk:latest
+
+# ### Define variables
+#
+variables:
+  # 1) Name of directory where restore and build objects are stored.
+  OBJECTS_DIRECTORY: 'obj'
+  # 2) Name of directory used for keeping restored dependencies.
+  NUGET_PACKAGES_DIRECTORY: '.nuget'
+  # 3) A relative path to the source code from project repository root.
+  # NOTE: Please edit this path so it matches the structure of your project!
+  SOURCE_CODE_PATH: '*/*/'
+
+
+# ### Restore project dependencies
+#
+# NuGet packages by default are restored to '.nuget/packages' directory
+# in the user's home directory. That directory is out of scope of GitLab caching.
+#
+# To get around this, a custom path can be specified using the '--packages <PATH>' option
+# for 'dotnet restore' command. In this example, a temporary directory is created
+# in the root of project repository, so its content can be cached.
+#
+# Learn more about GitLab cache: https://docs.gitlab.com/ee/ci/caching/index.html
+before_script:
+  - 'dotnet restore --packages $NUGET_PACKAGES_DIRECTORY'
+
+build:
+  stage: build
+  script:
+#    - dotnet <path to SonarScanner.MSBuild.dll> begin /k:"WAPI-The" /d:sonar.login="<token>"
+    - dotnet build --configuration Release
+    - dotnet test --collect "Code Coverage" --logger "trx;logfilename=testResults.trx"
+#    - dotnet <path to SonarScanner.MSBuild.dll> end /d:sonar.login="<token>" 
+
+
+#deploy:
+#  stage: deploy
+#  script: echo "Define your deployment script!"
+#  environment: production
