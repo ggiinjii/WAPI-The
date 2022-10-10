@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WAPI-The-API", "WAPI-The\WAPI-The-API.csproj", "{74F5E705-C305-4FEF-A837-E4D50DC21F9B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD} = {D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapi-the-Services", "Wapi-the-Services\Wapi-the-Services.csproj", "{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6F96720D-6DA8-4999-845E-3C81ADF21463} = {6F96720D-6DA8-4999-845E-3C81ADF21463}
+		{E0734A68-5982-4987-B9ED-01F51487646B} = {E0734A68-5982-4987-B9ED-01F51487646B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapi-the-Infra", "Wapi-the-Infra\Wapi-the-Infra.csproj", "{6F96720D-6DA8-4999-845E-3C81ADF21463}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapi-the-Core", "Wapi-the-Core\Wapi-the-Core.csproj", "{E0734A68-5982-4987-B9ED-01F51487646B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wapi-The-UnitTest", "Wapi-The-UnitTest\Wapi-The-UnitTest.csproj", "{1D3FFEA6-752C-4FD8-9658-61121D6B7705}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD} = {D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74F5E705-C305-4FEF-A837-E4D50DC21F9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74F5E705-C305-4FEF-A837-E4D50DC21F9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74F5E705-C305-4FEF-A837-E4D50DC21F9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74F5E705-C305-4FEF-A837-E4D50DC21F9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5422D2B-DDB7-4C23-BB6B-C2B3732347FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F96720D-6DA8-4999-845E-3C81ADF21463}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F96720D-6DA8-4999-845E-3C81ADF21463}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F96720D-6DA8-4999-845E-3C81ADF21463}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F96720D-6DA8-4999-845E-3C81ADF21463}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0734A68-5982-4987-B9ED-01F51487646B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0734A68-5982-4987-B9ED-01F51487646B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0734A68-5982-4987-B9ED-01F51487646B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0734A68-5982-4987-B9ED-01F51487646B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D3FFEA6-752C-4FD8-9658-61121D6B7705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D3FFEA6-752C-4FD8-9658-61121D6B7705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D3FFEA6-752C-4FD8-9658-61121D6B7705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D3FFEA6-752C-4FD8-9658-61121D6B7705}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {66DFF282-1115-4710-A82A-7977374A7F56}
+	EndGlobalSection
+EndGlobal
