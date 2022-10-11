@@ -57,7 +57,7 @@ namespace WAPI_The.Controllers.v1
                 }
                 catch (Exception e)
                 {
-                        throw e;
+                    throw e;
                 }
                 return Ok();
             }

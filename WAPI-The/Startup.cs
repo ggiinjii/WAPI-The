@@ -47,13 +47,13 @@ namespace WAPI_The
                 config.ApiVersionReader = new HeaderApiVersionReader("api-version");
             });
             #endregion
-            services.AddAutoMapper(typeof(Profiles));         
+            services.AddAutoMapper(typeof(Profiles));
             services.AddDbContext<modelContext>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SwaggerDemo", Version = "v1" });
             });
-        
+
             services.AddControllers();
         }
 
@@ -66,14 +66,15 @@ namespace WAPI_The
             }
 
             app.UseCors(option =>
-            option.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()) ;
+            option.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
             app.UseResponseCaching();
 
-            
+
 
 
             app.UseSwagger();
-            app.UseSwaggerUI(swag => {
+            app.UseSwaggerUI(swag =>
+            {
                 swag.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
             });
 

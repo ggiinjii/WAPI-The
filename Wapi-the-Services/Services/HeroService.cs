@@ -8,12 +8,12 @@ using Wapi_the_Core.Unit_Of_Work;
 
 namespace Wapi_the_Services.Services
 {
-    public class HeroService: IHeroServices
+    public class HeroService : IHeroServices
     {
         private UnitOfWork _unit_Of_Work;
         private readonly IMapper _mapper;
 
-        public HeroService( IMapper mapper)
+        public HeroService(IMapper mapper)
         {
             _unit_Of_Work = new UnitOfWork(_mapper);
             _mapper = mapper;
@@ -21,7 +21,7 @@ namespace Wapi_the_Services.Services
 
         public HeroService(IMapper mapper, IHeroRepository test)
         {
-            _unit_Of_Work = new UnitOfWork(_mapper,test);
+            _unit_Of_Work = new UnitOfWork(_mapper, test);
             _mapper = mapper;
         }
 
@@ -92,7 +92,7 @@ namespace Wapi_the_Services.Services
             if (!IsHeroDtoValid(hero))
                 return null;
 
-                hero.Id = _unit_Of_Work.HeroRepository.GetHeroes().Count() + 1;
+            hero.Id = _unit_Of_Work.HeroRepository.GetHeroes().Count() + 1;
 
 
             _unit_Of_Work.HeroRepository.InsertHero(hero);

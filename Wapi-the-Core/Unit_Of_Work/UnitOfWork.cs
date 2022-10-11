@@ -7,22 +7,22 @@ namespace Wapi_the_Core.Unit_Of_Work
 {
     public class UnitOfWork : IDisposable
     {
-        private modelContext context = new modelContext();
+        private modelContext _context = new modelContext();
         private GenericRepository<Hero> _genericRepository;
-        private IHeroRepository heroRepository;
-        private bool disposed = false;
+        private IHeroRepository _heroRepository;
+        private bool _disposed = false;
         private readonly IMapper _mapper;
 
         public UnitOfWork(IMapper mapper)
         {
-            _mapper = mapper;   
+            _mapper = mapper;
         }
         public UnitOfWork(IMapper mapper, IHeroRepository test)
         {
             _mapper = mapper;
-            if (this.heroRepository == null)
+            if (this._heroRepository == null)
             {
-                this.heroRepository = test;
+                this._heroRepository = test;
             }
         }
         public GenericRepository<Hero> GenericRepository
@@ -31,7 +31,7 @@ namespace Wapi_the_Core.Unit_Of_Work
             {
                 if (this._genericRepository == null)
                 {
-                    this._genericRepository = new GenericRepository<Hero>(context);
+                    this._genericRepository = new GenericRepository<Hero>(_context);
                 }
                 return _genericRepository;
             }
@@ -41,29 +41,29 @@ namespace Wapi_the_Core.Unit_Of_Work
         {
             get
             {
-                if (this.heroRepository == null)
+                if (this._heroRepository == null)
                 {
-                    this.heroRepository = new HeroRepository(context, _mapper);
+                    this._heroRepository = new HeroRepository(_context, _mapper);
                 }
-                return heroRepository;
+                return _heroRepository;
             }
         }
 
         public void Save()
         {
-            context.SaveChanges();
+            _context.SaveChanges();
         }
 
         protected virtual void Dispose(bool disposing)
         {
-            if (!this.disposed)
+            if (!this._disposed)
             {
                 if (disposing)
                 {
-                    context.Dispose();
+                    _context.Dispose();
                 }
             }
-            this.disposed = true;
+            this._disposed = true;
         }
 
         public void Dispose()

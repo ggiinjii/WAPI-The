@@ -4,7 +4,7 @@ using Wapi_the_Core.DTO;
 
 namespace Wapi_the_Core.Mapper
 {
-    public class Profiles: Profile
+    public class Profiles : Profile
     {
 
         public Profiles()

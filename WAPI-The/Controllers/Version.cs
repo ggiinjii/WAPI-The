@@ -17,7 +17,7 @@ namespace WAPI_The.Controllers
         public ActionResult Index()
         {
 
-            return Ok( new String($"Api Version: {ApiVersion.Default}"));
+            return Ok(new String($"Api Version: {ApiVersion.Default}"));
         }
 
 
