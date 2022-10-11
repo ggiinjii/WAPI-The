@@ -38,7 +38,7 @@ namespace Wapi_The_UnitTest
         }
 
         [Test]
-        public void GetHeroes()
+        public void GetHeroesReturnHeroList()
         {
             _mock_HeroRepo.Setup(p => p.GetHeroes()).Returns(_heroList);
 
@@ -67,7 +67,7 @@ namespace Wapi_The_UnitTest
         }
 
         [Test]
-        public void IsHeroExistShouldReturnTrue()
+        public void HeroExistReturnTrue()
         {
 
             _mock_HeroRepo.Setup(p => p.GetHeroes()).Returns(_heroList);
@@ -79,7 +79,7 @@ namespace Wapi_The_UnitTest
         }
 
         [Test]
-        public void IsHeroExistShouldReturnFalse()
+        public void HeroExistReturnFalse()
         {
             _mock_HeroRepo.Setup(p => p.GetHeroes()).Returns(_heroList);
             HeroService myService = new HeroService(null, _mock_HeroRepo.Object);
@@ -89,7 +89,7 @@ namespace Wapi_The_UnitTest
         }
 
         [Test]
-        public void IsCreateOk()
+        public void CreateIsOkAndReturnObj()
         {
             HeroDto h1_r = new HeroDto(1, "Test", "Test");
 
@@ -100,14 +100,13 @@ namespace Wapi_The_UnitTest
 
             var test = myService.Create(h1_r);
 
-
-            Assert.That("Test", Is.EqualTo(test.Name));
-            Assert.That(6, Is.EqualTo(test.Id));
-            Assert.That("Test", Is.EqualTo(test.Alter));
+            Assert.That(test.Name, Is.EqualTo("Test"));
+            Assert.That(test.Id, Is.EqualTo(6));
+            Assert.That(test.Alter, Is.EqualTo("Test"));
         }
 
         [Test]
-        public void IsCreateReturnNULL()
+        public void CreateReturnNULL()
         {
             HeroDto h1_r = new HeroDto(1, "Test", "Test");
 
@@ -131,7 +130,7 @@ namespace Wapi_The_UnitTest
         }
 
         [Test]
-        public void IsDeleteReturnOk()
+        public void DeleteReturnOk()
         {
             _mock_HeroRepo.Setup(p => p.GetHeroes()).Returns(_heroList);
             _mock_HeroRepo.Setup(p => p.DeleteHero(It.IsAny<int>())).Callback((int item) => _heroList.RemoveAt(item));
@@ -142,11 +141,11 @@ namespace Wapi_The_UnitTest
             var listHero = myService.getHeroes();
 
             Assert.IsTrue(test);
-            Assert.That(4, Is.EqualTo(listHero.Count));
+            Assert.That(listHero.Count, Is.EqualTo(4));
         }
 
         [Test]
-        public void IsEditOk()
+        public void EditOkAndReturnObjEdited()
         {
             HeroDto h1_r = new HeroDto(4, "Test", "Test");
 
@@ -157,13 +156,13 @@ namespace Wapi_The_UnitTest
 
             var test = myService.Edit(4, h1_r);
 
-            Assert.That("Test", Is.EqualTo(test.Name));
-            Assert.That(4, Is.EqualTo(test.Id));
-            Assert.That("Test", Is.EqualTo(test.Alter));
+            Assert.That(test.Name, Is.EqualTo("Test"));
+            Assert.That(test.Id, Is.EqualTo(4));
+            Assert.That(test.Alter, Is.EqualTo("Test"));
         }
 
         [Test]
-        public void IsEditReturnNull()
+        public void EditReturnNull()
         {
             HeroDto h1_r = new HeroDto(4, "Test", "Test");
 
@@ -188,9 +187,10 @@ namespace Wapi_The_UnitTest
             HeroService myService = new HeroService(null, _mock_HeroRepo.Object);
             var test = myService.getHeroId(3);
 
-            Assert.That("My Ego", Is.EqualTo(test.Name));
-            Assert.That(4, Is.EqualTo(test.Id));
-            Assert.That("Ego", Is.EqualTo(test.Alter));
+            Assert.That(test.Name, Is.EqualTo("My Ego"));
+            Assert.That(test.Id, Is.EqualTo(4));
+            Assert.That(test.Alter, Is.EqualTo("Ego"));
         }
+
     }
 }
