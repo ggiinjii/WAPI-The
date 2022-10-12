@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Wapi_the_Infra.Models;
 using Wapi_the_Core.DTO;
 
 namespace Wapi_the_Core.DAL

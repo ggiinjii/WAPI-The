@@ -1,11 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
-using Wapi_the_Infra.Models;
+using System.Linq;
 using System.Linq.Expressions;
-using Microsoft.EntityFrameworkCore;
-using AutoMapper;
+using Wapi_the_Infra.Models;
 
 namespace Wapi_the_Core.DAL
 {

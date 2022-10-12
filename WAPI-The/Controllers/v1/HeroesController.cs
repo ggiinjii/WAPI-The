@@ -1,6 +1,6 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
+using System;
 using Wapi_the_Core.DTO;
 using Wapi_the_Services.Services;
 

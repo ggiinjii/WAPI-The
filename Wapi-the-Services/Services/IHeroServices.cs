@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Wapi_the_Core.DTO;
 
 namespace Wapi_the_Services.Services

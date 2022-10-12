@@ -20,3 +20,6 @@ WAPI-The/bin/
 WAPI-The/obj/
 
 .vs/
+
+WAPI-The-WebUi/angular-tour-of-heroes/.vscode
+WAPI-The-WebUi/angular-tour-of-heroes/.angular

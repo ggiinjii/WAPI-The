@@ -1,13 +1,10 @@
-using NUnit.Framework;
-using Wapi_the_Services.Services;
-using Wapi_the_Core.DTO;
-using Wapi_the_Core.DAL;
 using Moq;
-using AutoMapper;
+using NUnit.Framework;
 using System.Collections.Generic;
-using Microsoft.Extensions.DependencyInjection;
-using Wapi_the_Core.Mapper;
 using System.Linq;
+using Wapi_the_Core.DAL;
+using Wapi_the_Core.DTO;
+using Wapi_the_Services.Services;
 
 namespace Wapi_The_UnitTest
 {

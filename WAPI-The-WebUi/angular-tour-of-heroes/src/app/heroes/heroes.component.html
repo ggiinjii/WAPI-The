@@ -1,0 +1,22 @@
+<h2>My Classromm</h2>
+<ul class="heroes">
+    <li *ngFor="let hero of heroes">
+      <a routerLink="/detail/{{hero.id}}">
+        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      </a>
+      <button type="button" class="delete" title="delete hero"
+      (click)="delete(hero)">x</button>
+    </li>
+  </ul>
+  <div>
+   <p> <label for="new-hero">Hero Name: </label>
+    <input id="new-hero" #heroName /><br/>
+     <label for="new-hero">Hero Alter: </label>
+    <input id="new-hero" #heroAlter/></p>
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(heroName.value, heroAlter.value); heroName.value=''; heroAlter.value=''">
+      Add hero
+    </button>
+  </div>
+ 

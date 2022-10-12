@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Wapi_the_Infra.Models;
 using Wapi_the_Core.DTO;
+using Wapi_the_Infra.Models;
 
 namespace Wapi_the_Core.Mapper
 {

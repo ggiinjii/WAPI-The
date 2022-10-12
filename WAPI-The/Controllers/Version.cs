@@ -1,8 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Versioning;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Reflection;
 
 namespace WAPI_The.Controllers
 {
@@ -16,7 +13,6 @@ namespace WAPI_The.Controllers
         [ResponseCache(VaryByHeader = "User-Agent", Duration = 30)]
         public ActionResult Index()
         {
-
             return Ok(new String($"Api Version: {ApiVersion.Default}"));
         }
 
