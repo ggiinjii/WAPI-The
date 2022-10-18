@@ -31,6 +31,8 @@ build:
 #    - dotnet <path to SonarScanner.MSBuild.dll> begin /k:"WAPI-The" /d:sonar.login="<token>"
     - dotnet build --configuration Release
     - dotnet test --collect "Code Coverage" --logger "trx;logfilename=testResults.trx"
+    - pwd
+    - ls
   artifacts:
     paths:
       - WAPI-The/Wapi-The-UnitTest/TestResults/*
