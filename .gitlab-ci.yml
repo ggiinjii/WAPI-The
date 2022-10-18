@@ -31,7 +31,20 @@ build:
 #    - dotnet <path to SonarScanner.MSBuild.dll> begin /k:"WAPI-The" /d:sonar.login="<token>"
     - dotnet build --configuration Release
     - dotnet test --collect "Code Coverage" --logger "trx;logfilename=testResults.trx"
-#    - dotnet <path to SonarScanner.MSBuild.dll> end /d:sonar.login="<token>" 
+  artifacts:
+    paths:
+      - Wapi-The-UnitTest\TestResults
+    expire_in: 1 week
+
+
+publish:
+  stage: deploy
+  script:
+    - dotnet publish --framework netcoreapp3.1
+  artifacts:
+    paths:
+      - Wapi-The-UnitTest\TestResults
+    expire_in: 1 week
 
 
 #deploy:

@@ -16,6 +16,7 @@ namespace Wapi_The_UnitTest
         public Mock<IHeroRepository> _mock_HeroRepo;
 
         [SetUp]
+        [OneTimeSetUp]
         public void Setup()
         {
             _mock_HeroRepo = new Mock<IHeroRepository>(MockBehavior.Strict);
