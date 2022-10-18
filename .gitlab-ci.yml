@@ -40,10 +40,10 @@ build:
 publish:
   stage: deploy
   script:
-    - dotnet publish --framework netcoreapp3.1
+    - dotnet publish --framework netcoreapp3.1 -c Release
   artifacts:
     paths:
-      - Wapi-The-UnitTest\TestResults
+      - Wapi-the-Core\bin\Release\netcoreapp3.1\publish\
     expire_in: 1 week
 
 
