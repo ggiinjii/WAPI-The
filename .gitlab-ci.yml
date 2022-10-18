@@ -34,9 +34,9 @@ build:
     - pwd
     - ls
   artifacts:
+    name: "Test_Result"
     paths:
-      - WAPI-The/Wapi-The-UnitTest/TestResults/*
-    expire_in: 1 week
+      - Wapi-The-UnitTest/TestResults/*
 
 
 publish:
@@ -44,9 +44,9 @@ publish:
   script:
     - dotnet publish --framework netcoreapp3.1 -c Release
   artifacts:
+    name: "Install"
     paths:
-      - WAPI-The/Wapi-the-Core/bin/Release/netcoreapp3.1/publish/*
-    expire_in: 1 week
+      - Wapi-the-Core/bin/Release/netcoreapp3.1/publish/*
 
 
 #deploy:
