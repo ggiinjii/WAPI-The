@@ -33,7 +33,7 @@ build:
     - dotnet test --collect "Code Coverage" --logger "trx;logfilename=testResults.trx"
   artifacts:
     paths:
-      - Wapi-The-UnitTest\TestResults
+      - Wapi-The-UnitTest\TestResults\*
     expire_in: 1 week
 
 
@@ -43,7 +43,7 @@ publish:
     - dotnet publish --framework netcoreapp3.1 -c Release
   artifacts:
     paths:
-      - Wapi-the-Core\bin\Release\netcoreapp3.1\publish\
+      - Wapi-the-Core\bin\Release\netcoreapp3.1\publish\*
     expire_in: 1 week
 
 
